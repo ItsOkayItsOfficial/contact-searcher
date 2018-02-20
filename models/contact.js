@@ -17,7 +17,7 @@ const contactSchema = new Schema({
   "email": String,
   "dob": Date,
   "phone": Number,
-  "cell": { type: Number, min: 13, max: 13 },
+  "cell": String,
   "picture": {
   "large": String,
   "medium": String,

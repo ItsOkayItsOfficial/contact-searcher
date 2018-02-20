@@ -54,10 +54,15 @@ class Contacts extends Component {
   };
 
   render() {
+    console.log(this.state.contacts)
     return (
       <Container fluid>
         <Row>
-          {/* <Col size="md-6">
+          <Col size="md-4">
+
+                    <Jumbotron>
+            <h2>Add Contact</h2>
+          </Jumbotron>
             <form>
               <Input
                 value={this.state.name}
@@ -71,11 +76,11 @@ class Contacts extends Component {
                 name="picture"
                 placeholder="Picture (optional)"
               />
-              <TextArea
+              <Input
                 value={this.state.number}
                 onChange={this.handleInputChange}
                 name="number"
-                placeholder="Number (required)"
+                placeholder="Cell (required)"
               />
               <FormBtn
                 disabled={!(this.state.picture && this.state.name)}
@@ -84,14 +89,19 @@ class Contacts extends Component {
                 Submit Contact
               </FormBtn>
             </form>
-          </Col> */}
-          <Col size="md-12">
+          </Col>
+          <Col size="md-8">
+          <Jumbotron>
+            <h2>Contacts</h2>
+          </Jumbotron>
             {this.state.contacts.length ? (
               <List>
                 {this.state.contacts.map(contact => (
                   <ListItem key={contact._id}>
                     <Link to={"/contacts/" + contact._id}>
+                      <Col size="md-2">
                       <img className="rounded-circle mr-5" src={contact.picture.large}/>
+                      </Col>
                       <strong>
                         {contact.name.first} {contact.name.last} {contact.cell}
                       </strong>

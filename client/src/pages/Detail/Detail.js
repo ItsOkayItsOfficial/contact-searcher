@@ -9,7 +9,6 @@ class Detail extends Component {
     contact: {}
   };
   // When this component mounts, grab the contact with the _id of this.props.match.params.id
-  // e.g. localhost:3000/contacts/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getContact(this.props.match.params.id)
       .then(res => this.setState({ contact: res.data }))
@@ -40,7 +39,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Contacts</Link>
           </Col>
         </Row>
       </Container>
